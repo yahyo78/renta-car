@@ -5,10 +5,18 @@ import React from "react";
 // images
 import imageFooterLogo from "@/public/Logo (9).svg";
 import imageCardLocation from "@/public/Icon+bg (2).svg";
+import imageCardPhone from "@/public/Icon+bg (20).svg";
 import FooterCard from "@/components/myComponents/footer/footerCard";
 import imageFaceBook from "@/public/Group (3).svg";
 import imageAppStore from "@/public/App Store.svg";
+import imageMarket from "@/public/Google Play.png";
+import imageEmail from "@/public/Icon+bg (10).svg";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+
+import imageInstagram from '@/public/Group.svg'
+import imageTwitter from '@/public/Group (1).svg'
+import imageYouTube from '@/public/Group (30).svg'
 
 const Footer = () => {
   const pathname = usePathname();
@@ -25,14 +33,14 @@ const Footer = () => {
           description="Oxford Ave. Cary, NC 27511"
         />
         <FooterCard
-          img={imageCardLocation}
-          text="Адрес"
-          description="Oxford Ave. Cary, NC 27511"
+          img={imageEmail}
+          text="Email "
+          description="nwiger@yahoo.com"
         />
         <FooterCard
-          img={imageCardLocation}
-          text="Адрес"
-          description="Oxford Ave. Cary, NC 27511"
+          img={imageCardPhone}
+          text="Телефон"
+          description="+537 547-6401"
         />
       </div>
 
@@ -44,15 +52,15 @@ const Footer = () => {
           </h1>
           <div className="flex gap-[15px]">
             <Image alt="" src={imageFaceBook} />
-            <Image alt="" src={imageFaceBook} />
-            <Image alt="" src={imageFaceBook} />
-            <Image alt="" src={imageFaceBook} />
+            <Image alt="" src={imageInstagram} />
+            <Image alt="" src={imageTwitter} />
+            <Image alt="" src={imageYouTube} />
           </div>
         </div>
         <div className="flex flex-col gap-[10px]">
           <h1 className="text-[20px] font-bold">Полезные ссылки</h1>
-          <p>О нас</p>
-          <p>Контакты</p>
+          <Link href={"about"}>О нас</Link>
+          <Link href={"/contact"}>Контакты</Link>
           <p>Галерея</p>
           <p>Блог</p>
           <p>Вопросы и ответы</p>
@@ -68,7 +76,7 @@ const Footer = () => {
         <div className="flex flex-col gap-[25px]">
           <h1 className="text-[20px] font-bold">Скачать приложение</h1>
           <Image src={imageAppStore} alt="" />
-          <Image src={imageAppStore} alt="" />
+          <Image src={imageMarket} alt="" />
         </div>
       </div>
     </div>

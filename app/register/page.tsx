@@ -62,13 +62,13 @@ export default function RegisterPage() {
             <Image src={imageLogo} alt="logo" />
           </div>
           <h1 className="text-3xl font-bold text-foreground mb-2">Create Account</h1>
-          <p className="text-muted-foreground">Register for admin dashboard access</p>
+          
         </div>
 
         {/* Register Box */}
         <div className="border rounded-lg shadow-lg bg-card p-6 flex flex-col gap-6">
-          <h2 className="text-xl font-semibold">Admin Registration</h2>
-          <p className="text-sm text-muted-foreground">Fill in your details to continue</p>
+          
+          
 
           <form onSubmit={handleSubmit} className="space-y-4">
 
@@ -79,7 +79,7 @@ export default function RegisterPage() {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="admin@example.com"
+                placeholder="Email"
                 required
                 className="bg-input h-10"
               />

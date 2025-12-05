@@ -9,12 +9,15 @@ import { Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
 import imageLogo from "@/public/Logo (9).svg";
 import { useLoginAdminMutation } from "@/api/logAndRegApi";
+import { useGetMeQuery } from "@/api/userApi";
 
 export default function LoginPage() {
   const [loginAdmin] = useLoginAdminMutation();
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  // console.log(getMeData);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,7 +33,7 @@ export default function LoginPage() {
       setIsLoading(true);
       const result: any = await loginAdmin(adminData).unwrap();
       localStorage.setItem("accsess_token", result.accessToken);
-
+      
       router.push("/");
     } catch (error) {
       console.error(error);
@@ -50,17 +53,12 @@ export default function LoginPage() {
           <h1 className="text-3xl font-bold text-foreground mb-2">
             Welcome Back
           </h1>
-          <p className="text-muted-foreground">
-            Sign in to your car rental admin dashboard
-          </p>
+          
         </div>
 
         {/* Login Box (replaced Card) */}
         <div className="border rounded-lg shadow-lg bg-card p-6 flex flex-col gap-6">
-          <h2 className="text-xl font-semibold">Admin Login</h2>
-          <p className="text-sm text-muted-foreground">
-            Enter your credentials to access the dashboard
-          </p>
+          
 
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email Field */}
@@ -75,7 +73,7 @@ export default function LoginPage() {
                 id="email"
                 type="email"
                 name="email"
-                placeholder="admin@example.com"
+                placeholder="Email"
                 required
                 className="h-10 bg-input"
               />
@@ -140,6 +138,12 @@ export default function LoginPage() {
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-border" />
               </div>
+              <div className="relative pt-[10px] flex justify-center text-xs uppercase">
+                <span className="bg-card px-2 text-muted-foreground">
+                  New to our platform?
+                </span>
+              </div>
+            </div>
               <div>
                 <Link
                   href="/register"
@@ -148,15 +152,8 @@ export default function LoginPage() {
                   Sign Up
                 </Link>
               </div>
-              <div className="relative pt-[10px] flex justify-center text-xs uppercase">
-                <span className="bg-card px-2 text-muted-foreground">
-                  New to our platform?
-                </span>
-              </div>
-            </div>
           </form>
         </div>
-        
 
         {/* Footer */}
         <p className="text-center text-xs text-muted-foreground mt-6">

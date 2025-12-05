@@ -34,10 +34,21 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useGetCarsQuery } from "@/api/carApi";
 import CarCard from "./home/carCard";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import imageSwiper from "@/public/s-l1200 (1).png";
+import imageSwiper2 from "@/public/part_2_9f92bc3b-b84c-456f-a0ac-8f83b1ae6044.png";
+import { useGetfavoriteQuery } from "@/api/favoriteApi";
 
 const HomePage = () => {
   const { data: makesData } = useGetMakesQuery("");
   const { data: carData } = useGetCarsQuery();
+  const { data: favList } = useGetfavoriteQuery();
+
+  const favoriteIds = favList?.map((f) => f.car.id) ?? [];
 
   const router = useRouter();
 
@@ -293,7 +304,7 @@ const HomePage = () => {
     // </><>
 
     <>
-      <div className="px-[5%]">
+      <div className="px-[5%] flex  items-center">
         <aside className="w-[79%]">
           <div className="pt-[20px]">
             <h1 className="text-[30px] font-bold">
@@ -341,7 +352,7 @@ const HomePage = () => {
               })}
             </div>
             <div className="flex flex-col  gap-[20px] py-[30px]">
-              {makesData?.slice(5,10).map((make) => {
+              {makesData?.slice(5, 10).map((make) => {
                 if (make.isActive) {
                   return (
                     <Link
@@ -357,7 +368,7 @@ const HomePage = () => {
             </div>
 
             <div className="flex flex-col  gap-[20px] py-[30px]">
-              {makesData?.slice(10,15).map((make) => {
+              {makesData?.slice(10, 15).map((make) => {
                 if (make.isActive) {
                   return (
                     <Link
@@ -373,7 +384,7 @@ const HomePage = () => {
             </div>
 
             <div className="flex flex-col  gap-[20px] py-[30px]">
-              {makesData?.slice(15,20).map((make) => {
+              {makesData?.slice(15, 20).map((make) => {
                 if (make.isActive) {
                   return (
                     <Link
@@ -389,7 +400,7 @@ const HomePage = () => {
             </div>
 
             <div className="flex flex-col  gap-[20px] py-[30px]">
-              {makesData?.slice(20,25).map((make) => {
+              {makesData?.slice(20, 25).map((make) => {
                 if (make.isActive) {
                   return (
                     <Link
@@ -405,13 +416,63 @@ const HomePage = () => {
             </div>
           </div>
         </aside>
+        <aside>
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            // navigation={true}
+            modules={[Autoplay, Pagination]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <div className="w-full h-[50vh] flex items-center justify-center">
+                <div className="relative flex justify-end  text-start pb-[10px] w-[100%] h-[300px]">
+                  <h1 className="font-bold w-[300px] left-0 absolute top-[20px]">
+                    Выберите автомобиль, который подчёркивает ваш статус.
+                  </h1>
+                  <Image
+                    src={imageSwiper}
+                    alt="hero-car"
+                    // fill
+                    className="object-contain pt-[30px]"
+                    width={350}
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+
+            {/* <SwiperSlide>
+              <div className="w-full h-[50vh] flex items-center justify-center">
+                <div className="relative w-[400px] h-[300px]">
+                  <Image
+                    src={imageSwiper2}
+                    alt="hero-car"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            </SwiperSlide> */}
+          </Swiper>
+        </aside>
       </div>
 
-      <div className="px-[5%] py-[50px]">
-        <h1 className="text-[40px] py-[20px] font-bold">Рекомендации</h1>
-        <div className="flex justify-between  flex-wrap">
+      <div className="px-[5%] py-[0px]">
+        <div className="flex items-center gap-[200px]">
+          <h1 className="text-[40px] py-[20px] font-bold">Рекомендации</h1>
+          <hr className="text-[20px] border-[#5937e0] border-1 w-[100%]" />
+        </div>
+        <div className="flex  gap-[30px]  flex-wrap">
           {carData?.map((car) => {
-            return <CarCard car={car} key={car.id} />;
+            return <CarCard car={car} key={car.id} favoriteIds={favoriteIds} />
+
           })}
         </div>
       </div>

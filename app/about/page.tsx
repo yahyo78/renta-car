@@ -19,58 +19,53 @@ const About = () => {
     <>
       <section className="xl:px-0 px-[20px]">
         <div className="flex flex-col items-center py-[50px] gap-[10px]">
-          <h1 className="xl:text-[50px] font-black text-[40px]">About Us</h1>
+          <h1 className="xl:text-[50px] font-black text-[40px]">О нас</h1>
           <p className="text-gray-400">
-            Home/ <span className="text-black">About Us</span>
+            Главная / <span className="text-black">О нас</span>
           </p>
         </div>
 
-        <div className="flex xl:flex-row  flex-col justify-between gap-[30px]">
+        <div className="flex xl:flex-row flex-col justify-between gap-[30px]">
           <div className="xl:w-[30%]">
             <h1 className="xl:text-[50px] font-bold text-[40px]">
-              Where every drive feels extraordinary
+              Где каждая поездка кажется особенной
             </h1>
           </div>
           <div className="xl:w-[30%] flex flex-col gap-[10px]">
             <div className="flex flex-col gap-[15px]">
               <h1 className="xl:text-[28px] text-[25px] font-bold">
-                Variety Brands
+                Разнообразие брендов
               </h1>
               <p>
-                Platea non auctor fermentum sollicitudin. Eget adipiscing augue
-                sit quam natoque ornare cursus viverra odio
+                Мы предлагаем широкий выбор автомобилей — комфорт, стиль и свобода движения для каждого клиента.
               </p>
             </div>
 
             <div className="flex flex-col gap-[10px]">
               <h1 className="xl:text-[28px] text-[25px] font-bold">
-                Maximum Freedom
+                Максимальная свобода
               </h1>
               <p>
-                Diam quam gravida ultricies velit duis consequat integer. Est
-                aliquam posuere vel rhoncus massa volutpat in
+                Гибкие условия аренды, удобные тарифы и сервис, созданный для вашего полного комфорта.
               </p>
             </div>
           </div>
           <div className="xl:w-[30%] flex flex-col gap-[10px]">
             <div className="flex flex-col gap-[15px]">
               <h1 className="xl:text-[28px] text-[25px] font-bold">
-                Awesome Suport
+                Отличная поддержка
               </h1>
               <p>
-                Eget adipiscing augue sit quam natoque ornare cursus viverra
-                odio. Diam quam gravida ultricies velit
+                Наша служба поддержки всегда готова помочь — быстро, профессионально и дружелюбно.
               </p>
             </div>
 
             <div className="flex flex-col gap-[10px]">
               <h1 className="xl:text-[28px] text-[25px] font-bold">
-                flexibility on the go
+                Гибкость на ходу
               </h1>
               <p>
-                Vitae pretium nulla sed quam id nisl semper. Vel non in proin
-                egestas dis.faucibus rhoncus. Iaculis dignissim aenean
-                pellentesque nisl
+                Простая аренда для любой ситуации — быстро, удобно и без лишних хлопот.
               </p>
             </div>
           </div>
@@ -78,48 +73,24 @@ const About = () => {
       </section>
 
       <section className="py-[50px] xl:px-0 px-[20px]">
-        <Swiper
-          direction="vertical"
-          pagination={{ clickable: true }}
-          navigation={true} 
-          modules={[Pagination, Navigation]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <iframe
-              src="https://www.youtube.com/embed/K9W0MtwrK98?si=NiDqKc0KN4Xdm3fV"
-              title="YouTube video"
-              allowFullScreen
-            ></iframe>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <iframe
-              src="https://www.youtube.com/embed/K9W0MtwrK98?si=NiDqKc0KN4Xdm3fV"
-              title="YouTube video"
-              allowFullScreen
-            ></iframe>
-          </SwiperSlide>
-        </Swiper>
-
         <div className="flex xl:flex-row flex-col py-[30px] justify-between gap-[50px] items-center">
           <div className="text-center">
             <h1 className="text-[#5937E0] xl:text-[70px] font-bold text-[55px]">
               20k+
             </h1>
-            <p className="font-bold xl:text-[25px]">Happy customers</p>
+            <p className="font-bold xl:text-[25px]">Довольных клиентов</p>
           </div>
           <div className="text-center">
             <h1 className="text-[#5937E0] xl:text-[70px] font-bold text-[55px]">
               540+
             </h1>
-            <p className="font-bold xl:text-[25px]">Count of cars</p>
+            <p className="font-bold xl:text-[25px]">Автомобилей в парке</p>
           </div>
           <div className="text-center">
             <h1 className="text-[#5937E0] xl:text-[70px] font-bold text-[55px]">
               25+
             </h1>
-            <p className="font-bold xl:text-[25px]">Years of experince</p>
+            <p className="font-bold xl:text-[25px]">Лет опыта</p>
           </div>
         </div>
       </section>
@@ -127,26 +98,23 @@ const About = () => {
       <section className="flex xl:flex-row flex-col items-center gap-[50px] xl:px-0 px-[5%] py-[30px] justify-between">
         <aside className="xl:w-[50%] flex-col flex gap-[30px]">
           <h1 className="text-[40px] xl:text-[50px] font-bold">
-            Unlock unforgettable memories on the road
+            Откройте незабываемые впечатления на дороге
           </h1>
           <p>
-            Aliquam adipiscing velit semper morbi. Purus non eu cursus porttitor
-            tristique et gravida. Quis nunc interdum gravida ullamcorper
+            Комфортные автомобили, гибкие условия и высокое качество обслуживания — всё для вашей идеальной поездки.
           </p>
           <div className="flex xl:flex-row flex-col items-center gap-[40px] justify-between">
             <div className="flex gap-[20px] items-start xl:w-[47%]">
               <Image alt="" src={imageTrue} />
               <p>
-                Velit semper morbi. Purus non eu cursus porttitor tristique et
-                gravida
+                Удобные условия аренды для каждого клиента
               </p>
             </div>
 
             <div className="flex gap-[20px] items-start xl:w-[47%]">
               <Image alt="" src={imageTrue} />
               <p>
-                Purus non eu cursus porttitor tristique et gravida. Quis nunc
-                interdum{" "}
+                Забота о вашем комфорте на протяжении всего пути
               </p>
             </div>
           </div>
@@ -154,14 +122,13 @@ const About = () => {
             <div className="flex gap-[20px] items-start xl:w-[47%]">
               <Image alt="" src={imageTrue} />
               <p>
-                Aliquam adipiscing velit semper morbi. Purus non eu cursus
-                porttitor{" "}
+                Прозрачные условия аренды без скрытых платежей
               </p>
             </div>
 
             <div className="flex gap-[20px] items-start xl:w-[47%]">
               <Image alt="" src={imageTrue} />
-              <p>Quis nunc interdum gravida ullamcorper</p>
+              <p>Индивидуальный подход для каждого клиента</p>
             </div>
           </div>
         </aside>
@@ -171,7 +138,7 @@ const About = () => {
       </section>
 
       <section className="relative h-[150vh] xl:h-[85vh] flex items-end xl:px-0 px-[20px]">
-        <div className="bg-[#5937E0] xl:px-0 px-[20px] bgImageDrift flex  rounded-[30px] xl:h-[60vh] h-[110vh] items-center xl:flex-row flex-col-reverse">
+        <div className="bg-[#5937E0] xl:px-0 px-[20px] bgImageDrift flex rounded-[30px] xl:h-[60vh] h-[110vh] items-center xl:flex-row flex-col-reverse">
           <aside className="xl:w-[47%] flex justify-center">
             <Image
               className="absolute xl:top-[0px] top-1"
@@ -180,15 +147,13 @@ const About = () => {
             />
           </aside>
 
-          <aside className="xl:w-[47%] py-[20px]  flex flex-col gap-[20px] text-white">
-            <p>Download our app</p>
+          <aside className="xl:w-[47%] py-[20px] flex flex-col gap-[20px] text-white">
+            <p>Скачайте наше приложение</p>
             <h1 className="text-[40px] font-bold xl:text-[50px]">
-              Download our app
+              Скачайте наше приложение
             </h1>
             <p>
-              Turpis morbi enim nisi pulvinar leo dui tellus. Faucibus egestas
-              semper diam rutrum dictumst ut donec. Nisi nisi morbi vel in
-              vulputate. Nulla nam eget urna fusce vulputate at risus
+              Быстрая аренда, удобное управление и эксклюзивные предложения — всё прямо в вашем смартфоне.
             </p>
             <div className="flex xl:flex-row gap-[20px] flex-col items-center xl:gap-[40px]">
               <Image
@@ -209,13 +174,13 @@ const About = () => {
       <section className="py-[50px] xl:px-0 px-[20px]">
         <div className="flex flex-col items-center">
           <h1 className="xl:text-[50px] text-[40px] text-center font-bold">
-            Reviews from our customers
+            Отзывы наших клиентов
           </h1>
         </div>
         <div className="flex xl:flex-row flex-col gap-[50px] items-center py-[40px] justify-between">
           <AboutCard
             text={
-              " Et aliquet netus at sapien pellentesque mollis nec dignissim maecenas. Amet erat volutpat quisque odio purus feugiat. In gravida neque "
+              " Замечательный сервис! Аренда прошла быстро и удобно. Машина была в идеальном состоянии."
             }
             ImageUser={imageUser}
             job={"Kuphal LLC"}
@@ -223,7 +188,7 @@ const About = () => {
           />
           <AboutCard
             text={
-              " Et aliquet netus at sapien pellentesque mollis nec dignissim maecenas. Amet erat volutpat quisque odio purus feugiat. In gravida neque "
+              " Отличный опыт аренды! Сотрудники вежливые, цены адекватные — рекомендую!"
             }
             ImageUser={imageUser}
             job={"Kuphal LLC"}
@@ -231,7 +196,7 @@ const About = () => {
           />
           <AboutCard
             text={
-              " Et aliquet netus at sapien pellentesque mollis nec dignissim maecenas. Amet erat volutpat quisque odio purus feugiat. In gravida neque "
+              " Всё прошло гладко. Машина чистая, оформление заняло пару минут. Очень доволен!"
             }
             ImageUser={imageUser}
             job={"Kuphal LLC"}
@@ -243,37 +208,35 @@ const About = () => {
       <section className="flex flex-col xl:px-0 px-[20px] gap-[20px]">
         <MyAccordion
           Content={
-            "Imperdiet ut tristique viverra nunc. Ultrices orci vel auctor cursus turpis nibh placerat massa. Fermentum urna ut at et in. Turpis aliquet cras hendrerit enim condimentum. Condimentum interdum risus bibendum urna. Augue aliquet varius faucibus ut integer tristique ut. Pellentesque id nibh sed nulla non nulla"
+            "Мы делаем процесс аренды максимально простым — выберите авто, заполните данные и отправляйтесь в путь!"
           }
-          trigger={"How does it works?"}
+          trigger={"Как это работает?"}
         />
         <MyAccordion
           Content={
-            "Imperdiet ut tristique viverra nunc. Ultrices orci vel auctor cursus turpis nibh placerat massa. Fermentum urna ut at et in. Turpis aliquet cras hendrerit enim condimentum. Condimentum interdum risus bibendum urna. Augue aliquet varius faucibus ut integer tristique ut. Pellentesque id nibh sed nulla non nulla"
+            "Да, вы можете арендовать авто без кредитной карты, если выберете альтернативные способы оплаты."
           }
-          trigger={"Can I rent a car without a credit card?"}
+          trigger={"Могу ли я арендовать авто без кредитной карты?"}
         />
         <MyAccordion
           Content={
-            "Imperdiet ut tristique viverra nunc. Ultrices orci vel auctor cursus turpis nibh placerat massa. Fermentum urna ut at et in. Turpis aliquet cras hendrerit enim condimentum. Condimentum interdum risus bibendum urna. Augue aliquet varius faucibus ut integer tristique ut. Pellentesque id nibh sed nulla non nulla"
+            "Для аренды нужен паспорт, водительское удостоверение и возраст от 21 года (в некоторых случаях 25+)."
           }
-          trigger={"What are the requirements for renting a car?"}
+          trigger={"Какие требования для аренды автомобиля?"}
         />
         <MyAccordion
           Content={
-            "Imperdiet ut tristique viverra nunc. Ultrices orci vel auctor cursus turpis nibh placerat massa. Fermentum urna ut at et in. Turpis aliquet cras hendrerit enim condimentum. Condimentum interdum risus bibendum urna. Augue aliquet varius faucibus ut integer tristique ut. Pellentesque id nibh sed nulla non nulla"
+            "Использование фаркопов и буксировка запрещены по условиям аренды для безопасности и сохранности авто."
           }
           trigger={
-            "Does Car Rental allow me to tow with or attach a hitch to the rental vehicle?"
+            "Можно ли буксировать или устанавливать фаркоп на арендованное авто?"
           }
         />
         <MyAccordion
           Content={
-            "Imperdiet ut tristique viverra nunc. Ultrices orci vel auctor cursus turpis nibh placerat massa. Fermentum urna ut at et in. Turpis aliquet cras hendrerit enim condimentum. Condimentum interdum risus bibendum urna. Augue aliquet varius faucibus ut integer tristique ut. Pellentesque id nibh sed nulla non nulla"
+            "Да, мы предлагаем различные страховые пакеты для вашей защиты во время аренды."
           }
-          trigger={
-            "Does Car Rental offer coverage products for purchase with my rental?"
-          }
+          trigger={"Есть ли у вас дополнительные страховые продукты?"}
         />
       </section>
 
@@ -282,19 +245,18 @@ const About = () => {
           <aside className="bgImageDrift xl:w-[55%]">
             <div className="flex flex-col gap-[20px]">
               <h1 className="xl:text-[50px] font-bold text-white text-[40px]">
-                Looking for a car?
+                Ищете автомобиль?
               </h1>
               <h1 className="xl:text-[40px] font-bold text-white text-[40px]">
                 +537 547-6401
               </h1>
               <p className="text-white">
-                Amet cras hac orci lacus. Faucibus ipsum arcu lectus nibh sapien
-                bibendum ullamcorper in. Diam tincidunt tincidunt erat
+                Быстрая аренда, большой выбор автомобилей и удобные условия. Свяжитесь с нами прямо сейчас!
               </p>
 
               <button className="p-[10px] w-[150px] px-[16px] rounded-[10px] bg-[#FF9E0C] text-white">
-                Buy Now
-              </button> 
+                Забронировать
+              </button>
             </div>
           </aside>
 

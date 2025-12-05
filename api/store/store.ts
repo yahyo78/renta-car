@@ -8,6 +8,8 @@ import { makeApi } from '../makeApi'
 import { modelApi } from '../modelApi'
 import { valueApi } from '../valueApi'
 import { carAtributApi } from '../carAtribiut'
+import { userApi } from '../userApi'
+import { favoriteApi } from '../favoriteApi'
 
 export const store = configureStore({
   reducer: {
@@ -19,6 +21,8 @@ export const store = configureStore({
     [valueApi.reducerPath]: valueApi.reducer,
     [modelApi.reducerPath]: modelApi.reducer,
     [carAtributApi.reducerPath]: carAtributApi.reducer,
+    [userApi.reducerPath]: userApi.reducer,
+    [favoriteApi.reducerPath]: favoriteApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(carApi.middleware)
@@ -28,7 +32,9 @@ export const store = configureStore({
     .concat(modelApi.middleware)
     .concat(makeApi.middleware)
     .concat(valueApi.middleware)
-    .concat(carAtributApi.middleware),
+    .concat(carAtributApi.middleware)
+    .concat(favoriteApi.middleware)
+    .concat(userApi.middleware),
 })
 
 setupListeners(store.dispatch)

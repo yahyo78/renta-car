@@ -22,6 +22,9 @@ export const resApi = createApi({
     getRes: builder.query({
       query: () => `api/cars`,
     }),
+    getResMe: builder.query({
+      query: () => `api/makes/me-reservation`,
+    }),
     postRes:builder.mutation({
         query:(resData)=>({
             url:`api/reservations`,
@@ -32,4 +35,4 @@ export const resApi = createApi({
   }),
 });
 
-export const { useGetResQuery,usePostResMutation } = resApi;
+export const { useGetResQuery,useGetResMeQuery,usePostResMutation } = resApi;

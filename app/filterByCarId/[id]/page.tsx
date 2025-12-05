@@ -99,12 +99,12 @@ const FilterById = () => {
       <form
         onSubmit={subMitFilterUser}
         className="
-          w-[1200px] bg-white rounded-[22px] shadow-lg p-[20px]
+          w-[100%] bg-white rounded-[22px] shadow-lg p-[20px]
           border border-gray-100 flex flex-wrap gap-[20px]
         "
       >
         {/* Make */}
-        <div className="w-full sm:w-[220px]">
+        <div className="w-full sm:w-[330px]">
           <p className="font-semibold mb-[6px] text-gray-700">Make</p>
           <Select value={makeId} onValueChange={(v) => setMakeId(v)}>
             <SelectTrigger className={selectStyle}>
@@ -124,7 +124,7 @@ const FilterById = () => {
         </div>
 
         {/* Model */}
-        <div className="w-full sm:w-[220px]">
+        <div className="w-full sm:w-[330px]">
           <p className="font-semibold mb-[6px] text-gray-700">Model</p>
           <Select name="ModelId" disabled={!makeId}>
             <SelectTrigger
@@ -228,7 +228,7 @@ const FilterById = () => {
         <button
           type="submit"
           className="
-            w-full sm:w-[160px] bg-[#5937e0] text-white py-[15px] rounded-[14px]
+            w-full sm:w-[500px] bg-[#5937e0] text-white py-[15px] rounded-[14px]
             font-semibold tracking-wide hover:bg-gray-800 transition
           "
         >
@@ -238,11 +238,11 @@ const FilterById = () => {
 
       {/* CAR LIST */}
       <div className="flex-1">
-        <h1 className="xl:text-[50px] text-[40px] font-bold text-center text-gray-900">
-          Vehicles
-        </h1>
+        {/* <h1 className="xl:text-[50px] text-[40px] font-bold text-center text-gray-900">
+          
+        </h1> */}
 
-        <div className="flex flex-wrap py-[40px] justify-between gap-[40px]">
+        <div className="flex flex-wrap py-[40px] gap-[40px]">
           {filterData?.map((car) => (
             <CarCard car={car} key={car.id} />
           ))}

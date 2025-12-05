@@ -11,7 +11,14 @@ import imageSeats from "@/public/Mask group (6).svg";
 import imageMail from "@/public/Group (6).svg";
 import imageDoor from "@/public/Clip path group.svg";
 
-import { Car, Timer, TimerReset, CalendarDays, ArrowRight, SunSnow } from "lucide-react";
+import {
+  Car,
+  Timer,
+  TimerReset,
+  CalendarDays,
+  ArrowRight,
+  SunSnow,
+} from "lucide-react";
 
 import {
   Dialog,
@@ -65,6 +72,7 @@ export default function Infocar() {
 
   async function ReservationFunc(event) {
     event.preventDefault();
+
     const start = event.target["startDate"].value;
     const end = event.target["endDate"].value;
 
@@ -73,10 +81,11 @@ export default function Infocar() {
         carId: id,
         startDate: new Date(start).toISOString(),
         endDate: new Date(end).toISOString(),
-      });
+      }).unwrap();
+
       toast.success("Ваш запрос принят!");
       setOpen(false);
-    } catch {
+    } catch (error) {
       toast.error("Произошла ошибка!");
     }
   }
@@ -84,7 +93,6 @@ export default function Infocar() {
   return (
     <>
       <section className="py-10 flex flex-col xl:flex-row gap-14">
-        
         {/* LEFT */}
         <aside className="xl:w-[45%] space-y-6">
           <div className="space-y-1">
@@ -135,14 +143,12 @@ export default function Infocar() {
 
         {/* RIGHT */}
         <aside className="xl:w-[55%] space-y-12">
-          
           {/* CHARACTERISTICS SECTION */}
           <div className="space-y-4">
             <h2 className="text-[26px] font-semibold">Характеристики</h2>
 
-<div>
-  {/* {CarByIdData?.} */}
-</div>
+            <div>{CarByIdData?.name}</div>
+
             <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
               {CarByIdData?.carAttributes.map((attr, i) => (
                 <div
@@ -260,13 +266,19 @@ export default function Infocar() {
 
                   <div className="flex justify-end gap-3 pt-2">
                     <DialogClose asChild>
-                      <Button onClick={()=>setOpen(false)} className="bg-red-500 hover:bg-red-400 transition-all duration-300 text-white px-6">
+                      <Button
+                        onClick={() => setOpen(false)}
+                        className="bg-red-500 hover:bg-red-400 transition-all duration-300 text-white px-6"
+                      >
                         Отмена
                       </Button>
                     </DialogClose>
 
                     <DialogClose asChild>
-                      <Button type="submit"  className="bg-[#5937e0] transition-all duration-400 hover:bg-[#836ddb] text-white px-8">
+                      <Button
+                        type="submit"
+                        className="bg-[#5937e0] transition-all duration-400 hover:bg-[#836ddb] text-white px-8"
+                      >
                         Сохранить
                       </Button>
                     </DialogClose>
